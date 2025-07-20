@@ -21,5 +21,7 @@ GreenCard 7 Node
 
 - 🛒 Quản trị viên (Seller/Admin):
   - http://103.178.234.70:5001/seller
+  - admin@gmail.com
+  - admin123
 
 > Bạn có thể truy cập trực tiếp trên trình duyệt
