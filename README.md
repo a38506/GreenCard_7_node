@@ -2,6 +2,7 @@ GreenCard 7 Node
 
 Ứng dụng Node.js phân tán gồm nhiều module nhỏ: orders, products, payment, users. Mỗi service có thể khởi chạy riêng biệt, giao tiếp với nhau qua API
 
+```
 7_node_2/
 ├── orders/           # Service quản lý đơn hàng
 ├── products/         # Service quản lý sản phẩm
@@ -11,7 +12,7 @@ GreenCard 7 Node
 ├── my-app-admin/     # Giao diện admin
 ├── docker-compose.yml# (nếu dùng Docker)
 ├── README.md         # Tệp hướng dẫn sử dụng
-
+```
 
 ## 🌐 Giao diện Web
 
