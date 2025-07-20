@@ -1,0 +1,70 @@
+
+services:
+  payment:
+    build: ./payment
+    ports:
+      - "3002:3002"
+    networks:
+      - app-net
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+  
+  orders:
+    build: ./orders
+    ports:
+      - "3003:3003"
+    networks:
+      - app-net
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+  
+  user-fe:
+    build: ./my-app
+    ports:
+      - "5000:80"
+    networks:
+      - app-net
+
+  admin-fe:
+    build: ./my-app-admin
+    ports:
+      - "5001:80"
+    networks:
+      - app-net
+
+  products:
+    build: ./products
+    ports:
+      - "3000:3000"
+    networks:
+      - app-net
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+
+  users:
+    build: ./users
+    ports:
+      - "3001:3001"
+    networks:
+      - app-net
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+
+  mongodb:
+    image: mongo:6
+    restart: always
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
+
+volumes:
+  mongo_data:
+    name: mongo_data
