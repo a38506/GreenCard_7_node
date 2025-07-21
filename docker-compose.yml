@@ -7,7 +7,7 @@ services:
     networks:
       - app-net
     environment:
-      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_URI=mongodb://mongodb:27017/GreenCart
   
   orders:
     build: ./orders
@@ -16,7 +16,7 @@ services:
     networks:
       - app-net
     environment:
-      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_URI=mongodb://mongodb:27017/GreenCart
   
   user-fe:
     build: ./my-app
@@ -39,7 +39,7 @@ services:
     networks:
       - app-net
     environment:
-      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_URI=mongodb://mongodb:27017/GreenCart
 
   users:
     build: ./users
@@ -48,7 +48,7 @@ services:
     networks:
       - app-net
     environment:
-      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_URI=mongodb://mongodb:27017/GreenCart
 
   mongodb:
     image: mongo:6
@@ -67,4 +67,3 @@ networks:
 
 volumes:
   mongo_data:
-    name: mongo_data
