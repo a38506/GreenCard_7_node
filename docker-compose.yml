@@ -6,6 +6,7 @@ services:
       - "3002:3002"
     networks:
       - app-net
+    restart: always
     environment:
       - MONGODB_URI=mongodb://mongodb:27017/GreenCart
   
@@ -15,6 +16,7 @@ services:
       - "3003:3003"
     networks:
       - app-net
+    restart: always
     environment:
       - MONGODB_URI=mongodb://mongodb:27017/GreenCart
   
@@ -24,6 +26,7 @@ services:
       - "5000:80"
     networks:
       - app-net
+    restart: always   
 
   admin-fe:
     build: ./my-app-admin
@@ -31,6 +34,7 @@ services:
       - "5001:80"
     networks:
       - app-net
+    restart: always
 
   products:
     build: ./products
@@ -38,6 +42,7 @@ services:
       - "3000:3000"
     networks:
       - app-net
+    restart: always
     environment:
       - MONGODB_URI=mongodb://mongodb:27017/GreenCart
 
@@ -47,6 +52,7 @@ services:
       - "3001:3001"
     networks:
       - app-net
+    restart: always
     environment:
       - MONGODB_URI=mongodb://mongodb:27017/GreenCart
 
